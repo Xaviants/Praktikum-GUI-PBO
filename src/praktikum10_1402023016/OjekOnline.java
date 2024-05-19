@@ -365,48 +365,44 @@ public class OjekOnline extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Isi Form Terlebih Dahulu", "FORM KOSONG", JOptionPane.WARNING_MESSAGE);
         }else{
             if(jTextField1.getText().isEmpty()){
-                JOptionPane.showMessageDialog(this, "NAMA DEPAN HARUS TERISI!", "NAMA DEPAN KOSONG", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Nama depan harus terisi!", "NAMA DEPAN KOSONG", JOptionPane.WARNING_MESSAGE);
             }else{
-                if(jTextField2.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(this, "NAMA BELAKANG HARUS TERISI!", "NAMA BELAKANG KOSONG", JOptionPane.WARNING_MESSAGE);
+                if(buttonGroup1.getSelection() == null){
+                    JOptionPane.showMessageDialog(this, "Mohon pilih jenis kelamin terlebih dahulu!", "JENIS KELAMIN TIDAK DIPILIH", JOptionPane.WARNING_MESSAGE);
                 }else{
-                    if(buttonGroup1.getSelection() == null){
-                        JOptionPane.showMessageDialog(this, "MOHON PILIH JENIS KELAMIN TERLEBIH DAHULU!", "JENIS KELAMIN TIDAK DIPILIH", JOptionPane.WARNING_MESSAGE);
+                    if(jTextField3.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this, "Mohon isi captcha terlebih dahulu!", "CAPTCHA KOSONG", JOptionPane.WARNING_MESSAGE);
                     }else{
-                        if(jTextField3.getText().isEmpty()){
-                            JOptionPane.showMessageDialog(this, "MOHON ISI CAPTCHA TERLEBIH DAHULU!", "CAPTCHA KOSONG", JOptionPane.WARNING_MESSAGE);
-                        }else{
-                            if(labelCapt.getText().equals(jTextField3.getText())){
-                                if(jCheckBox1.isSelected()){
-                                    if(!"Pilih Jenis Pengemudi".equals(jComboBox1.getSelectedItem().toString())){
-                                        try{
-                                            if(conn == null || conn.isClosed()){
-                                                conn = Connect.getConnected();
-                                            }
-
-                                            String query = "INSERT INTO praktikum10 (namaDepan, namaBack, jenisKelamin, kendaraan) values (?, ?, ?, ?)";
-
-                                            try(PreparedStatement ps = conn.prepareStatement(query)){
-                                                ps.setString(1, jTextField1.getText());
-                                                ps.setString(2, jTextField2.getText());
-                                                ps.setString(3, buttonGroup1.getSelection().isSelected() ? "Pria" : "Wanita");
-                                                ps.setString(4, jComboBox1.getSelectedItem().toString());
-                                                ps.executeUpdate();
-                                            }
-                                            JOptionPane.showMessageDialog(this, "PENDAFTARAN BERHASIL!", "REGISTRATION SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                                            resetForm();
-                                        }catch(SQLException ex){
-                                            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        if(labelCapt.getText().equals(jTextField3.getText())){
+                            if(jCheckBox1.isSelected()){
+                                if(!"Pilih Jenis Pengemudi".equals(jComboBox1.getSelectedItem().toString())){
+                                    try{
+                                        if(conn == null || conn.isClosed()){
+                                            conn = Connect.getConnected();
                                         }
-                                    }else{
-                                        JOptionPane.showMessageDialog(this, "MOHON PILIH JENIS PENGEMUDI TERLEBIH DAHULU!", "JENIS PENGEMUDI TIDAK DIPILIH", JOptionPane.WARNING_MESSAGE);
+
+                                        String query = "INSERT INTO praktikum10 (namaDepan, namaBack, jenisKelamin, kendaraan) values (?, ?, ?, ?)";
+
+                                        try(PreparedStatement ps = conn.prepareStatement(query)){
+                                            ps.setString(1, jTextField1.getText());
+                                            ps.setString(2, jTextField2.getText());
+                                            ps.setString(3, buttonGroup1.getSelection().isSelected() ? "Pria" : "Wanita");
+                                            ps.setString(4, jComboBox1.getSelectedItem().toString());
+                                            ps.executeUpdate();
+                                        }
+                                        JOptionPane.showMessageDialog(this, "Registration Success!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                                        resetForm();
+                                    }catch(SQLException ex){
+                                        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                                     }
                                 }else{
-                                    JOptionPane.showMessageDialog(this, "KOTAK PERSETUJUAN HARUS DICENTANG!", "KOTAK PERSETUJUAN KOSONG", JOptionPane.WARNING_MESSAGE);
+                                    JOptionPane.showMessageDialog(this, "Mohon pilih jenis pengemudi terlebih dahulu!", "JENIS PENGEMUDI TIDAK DIPILIH", JOptionPane.WARNING_MESSAGE);
                                 }
                             }else{
-                                JOptionPane.showMessageDialog(this, "CAPTCHA TIDAK SESUAI!", "CAPTCHA SALAH", JOptionPane.WARNING_MESSAGE);
+                                JOptionPane.showMessageDialog(this, "Kotak persetujuan harus dicentang!", "KOTAK PERSETUJUAN KOSONG", JOptionPane.WARNING_MESSAGE);
                             }
+                        }else{
+                            JOptionPane.showMessageDialog(this, "Captcha tidak sesuai!", "CAPTCHA SALAH", JOptionPane.WARNING_MESSAGE);
                         }
                     }
                 }
