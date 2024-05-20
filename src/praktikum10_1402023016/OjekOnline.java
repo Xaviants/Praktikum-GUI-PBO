@@ -29,8 +29,8 @@ public class OjekOnline extends javax.swing.JFrame {
     public OjekOnline() {
         initComponents();
         labelCapt.setText(generateCaptcha(7));
-        buttonGroup1.add(jRadioButton1);
-        buttonGroup1.add(jRadioButton2);
+        buttonGroup1.add(radioButtonPria);
+        buttonGroup1.add(radioButtonWanita);
     }
     
     public static Boolean checkCaptcha(String captcha, String user_Captcha){
@@ -49,12 +49,12 @@ public class OjekOnline extends javax.swing.JFrame {
     }
    
     public void resetForm(){
-        jTextField1.setText("");
-        jTextField2.setText("");
+        txtFieldNamaDepan.setText("");
+        txtFieldNamaBelakang.setText("");
         buttonGroup1.clearSelection();
-        jComboBox1.setSelectedItem("Pilih Jenis Pengemudi");
-        jCheckBox1.setSelected(false);
-        jTextField3.setText("");
+        cmbBoxJenisPengemudi.setSelectedItem("Pilih Jenis Pengemudi");
+        kotakPersetujuan.setSelected(false);
+        txtFieldCaptcha.setText("");
         labelCapt.setText(generateCaptcha(7));
     }
     
@@ -70,24 +70,23 @@ public class OjekOnline extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
+        title1 = new javax.swing.JLabel();
+        title2 = new javax.swing.JLabel();
+        lblNamaDepan = new javax.swing.JLabel();
+        txtFieldNamaDepan = new javax.swing.JTextField();
+        lblNamaBelakang = new javax.swing.JLabel();
+        txtFieldNamaBelakang = new javax.swing.JTextField();
+        lblJenisKelamin = new javax.swing.JLabel();
+        radioButtonPria = new javax.swing.JRadioButton();
+        radioButtonWanita = new javax.swing.JRadioButton();
+        cmbBoxJenisPengemudi = new javax.swing.JComboBox<>();
+        kotakPersetujuan = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        lblKetCaptcha = new javax.swing.JLabel();
+        txtFieldCaptcha = new javax.swing.JTextField();
         labelCapt = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        buttonLihatPendaftar = new javax.swing.JButton();
+        buttonDaftarSekarang = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -105,64 +104,36 @@ public class OjekOnline extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ojek Online FTI ");
+        title1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title1.setText("Ojek Online FTI ");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Daftar Sekarang !");
+        title2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title2.setText("Daftar Sekarang !");
 
-        jLabel3.setText("Nama Depan");
+        lblNamaDepan.setText("Nama Depan");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        lblNamaBelakang.setText("Nama Belakang");
 
-        jLabel4.setText("Nama Belakang");
+        lblJenisKelamin.setText("Jenis Kelamin");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
+        radioButtonPria.setText("Pria");
 
-        jLabel5.setText("Jenis Kelamin");
+        radioButtonWanita.setText("Wanita");
 
-        jRadioButton1.setText("Pria");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
+        cmbBoxJenisPengemudi.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        cmbBoxJenisPengemudi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Jenis Pengemudi", "Motor", "Mobil" }));
+        cmbBoxJenisPengemudi.setToolTipText("");
+        cmbBoxJenisPengemudi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jRadioButton2.setText("Wanita");
-
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Jenis Pengemudi", "Motor", "Mobil" }));
-        jComboBox1.setToolTipText("");
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jCheckBox1.setText("Saya menyetujui peraturan yang berlaku ");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
+        kotakPersetujuan.setText("Saya menyetujui peraturan yang berlaku ");
+        kotakPersetujuan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        jLabel7.setText("Masukan Captcha");
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
+        lblKetCaptcha.setText("Masukan Captcha");
 
         labelCapt.setBackground(new java.awt.Color(255, 255, 255));
         labelCapt.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -177,8 +148,8 @@ public class OjekOnline extends javax.swing.JFrame {
                 .addComponent(labelCapt, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblKetCaptcha, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFieldCaptcha, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82))
         );
         jPanel2Layout.setVerticalGroup(
@@ -188,27 +159,27 @@ public class OjekOnline extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelCapt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblKetCaptcha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtFieldCaptcha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("LIHAT PENDAFTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonLihatPendaftar.setBackground(new java.awt.Color(255, 204, 153));
+        buttonLihatPendaftar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonLihatPendaftar.setText("LIHAT PENDAFTAR");
+        buttonLihatPendaftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonLihatPendaftarActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("DAFTAR SEKARANG !");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonDaftarSekarang.setBackground(new java.awt.Color(255, 153, 51));
+        buttonDaftarSekarang.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonDaftarSekarang.setText("DAFTAR SEKARANG !");
+        buttonDaftarSekarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                buttonDaftarSekarangActionPerformed(evt);
             }
         });
 
@@ -221,71 +192,66 @@ public class OjekOnline extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(476, 476, 476)
-                                .addComponent(jLabel6))
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jRadioButton1)
+                                    .addComponent(lblJenisKelamin)
+                                    .addComponent(radioButtonPria)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3)))
+                                        .addComponent(txtFieldNamaDepan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblNamaDepan)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(radioButtonWanita)
+                                    .addComponent(lblNamaBelakang)
+                                    .addComponent(txtFieldNamaBelakang, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(title1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonLihatPendaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buttonDaftarSekarang, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbBoxJenisPengemudi, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addComponent(kotakPersetujuan, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(title1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(title2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
+                            .addComponent(lblNamaBelakang)
+                            .addComponent(lblNamaDepan))
                         .addGap(1, 1, 1)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFieldNamaBelakang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtFieldNamaDepan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(lblJenisKelamin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(radioButtonPria)
+                    .addComponent(radioButtonWanita))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbBoxJenisPengemudi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(kotakPersetujuan)
                 .addGap(12, 12, 12)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(124, 124, 124)
-                .addComponent(jLabel6)
-                .addGap(146, 146, 146))
+                    .addComponent(buttonDaftarSekarang, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonLihatPendaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(270, 270, 270))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -305,23 +271,7 @@ public class OjekOnline extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonLihatPendaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLihatPendaftarActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel(new String[]{"ID", "Nama Depan", "Nama Belakang", "Jenis Kelamin", "Jenis Pengemudi"}, 0);
         JTable table = new JTable(tableModel);
         
@@ -354,28 +304,24 @@ public class OjekOnline extends javax.swing.JFrame {
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonLihatPendaftarActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && buttonGroup1.getSelection() == null && jComboBox1.getSelectedItem().toString().equals("Pilih Jenis Pengemudi") && !jCheckBox1.isSelected() && jTextField3.getText().isEmpty()){
+    private void buttonDaftarSekarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDaftarSekarangActionPerformed
+        if(txtFieldNamaDepan.getText().isEmpty() && txtFieldNamaBelakang.getText().isEmpty() && buttonGroup1.getSelection() == null && cmbBoxJenisPengemudi.getSelectedItem().toString().equals("Pilih Jenis Pengemudi") && !kotakPersetujuan.isSelected() && txtFieldCaptcha.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Isi Form Terlebih Dahulu", "FORM KOSONG", JOptionPane.WARNING_MESSAGE);
         }else{
-            if(jTextField1.getText().isEmpty()){
+            if(txtFieldNamaDepan.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this, "Nama depan harus terisi!", "NAMA DEPAN KOSONG", JOptionPane.WARNING_MESSAGE);
             }else{
                 if(buttonGroup1.getSelection() == null){
                     JOptionPane.showMessageDialog(this, "Mohon pilih jenis kelamin terlebih dahulu!", "JENIS KELAMIN TIDAK DIPILIH", JOptionPane.WARNING_MESSAGE);
                 }else{
-                    if(jTextField3.getText().isEmpty()){
+                    if(txtFieldCaptcha.getText().isEmpty()){
                         JOptionPane.showMessageDialog(this, "Mohon isi captcha terlebih dahulu!", "CAPTCHA KOSONG", JOptionPane.WARNING_MESSAGE);
                     }else{
-                        if(labelCapt.getText().equals(jTextField3.getText())){
-                            if(jCheckBox1.isSelected()){
-                                if(!"Pilih Jenis Pengemudi".equals(jComboBox1.getSelectedItem().toString())){
+                        if(labelCapt.getText().equals(txtFieldCaptcha.getText())){
+                            if(kotakPersetujuan.isSelected()){
+                                if(!"Pilih Jenis Pengemudi".equals(cmbBoxJenisPengemudi.getSelectedItem().toString())){
                                     try{
                                         if(conn == null || conn.isClosed()){
                                             conn = Connect.getConnected();
@@ -384,10 +330,10 @@ public class OjekOnline extends javax.swing.JFrame {
                                         String query = "INSERT INTO praktikum10 (namaDepan, namaBack, jenisKelamin, kendaraan) values (?, ?, ?, ?)";
 
                                         try(PreparedStatement ps = conn.prepareStatement(query)){
-                                            ps.setString(1, jTextField1.getText());
-                                            ps.setString(2, jTextField2.getText());
+                                            ps.setString(1, txtFieldNamaDepan.getText());
+                                            ps.setString(2, txtFieldNamaBelakang.getText());
                                             ps.setString(3, buttonGroup1.getSelection().isSelected() ? "Pria" : "Wanita");
-                                            ps.setString(4, jComboBox1.getSelectedItem().toString());
+                                            ps.setString(4, cmbBoxJenisPengemudi.getSelectedItem().toString());
                                             ps.executeUpdate();
                                         }
                                         JOptionPane.showMessageDialog(this, "Registration Success!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
@@ -408,7 +354,7 @@ public class OjekOnline extends javax.swing.JFrame {
                 }
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonDaftarSekarangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,26 +395,25 @@ public class OjekOnline extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonDaftarSekarang;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton buttonLihatPendaftar;
+    private javax.swing.JComboBox<String> cmbBoxJenisPengemudi;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JCheckBox kotakPersetujuan;
     private javax.swing.JLabel labelCapt;
+    private javax.swing.JLabel lblJenisKelamin;
+    private javax.swing.JLabel lblKetCaptcha;
+    private javax.swing.JLabel lblNamaBelakang;
+    private javax.swing.JLabel lblNamaDepan;
+    private javax.swing.JRadioButton radioButtonPria;
+    private javax.swing.JRadioButton radioButtonWanita;
+    private javax.swing.JLabel title1;
+    private javax.swing.JLabel title2;
+    private javax.swing.JTextField txtFieldCaptcha;
+    private javax.swing.JTextField txtFieldNamaBelakang;
+    private javax.swing.JTextField txtFieldNamaDepan;
     // End of variables declaration//GEN-END:variables
 }
