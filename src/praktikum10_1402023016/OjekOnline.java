@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JFrame;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author DAFFA
  */
-import javax.swing.JOptionPane;
 public class OjekOnline extends javax.swing.JFrame {
     private Connection conn = null;
 
